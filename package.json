@@ -1,22 +1,22 @@
 {
-  "name": "X",
+  "name": "imgfnt",
   "version": "0.1.2",
-  "description": "X",
+  "description": "An image filled text generator as a service.",
   "main": "X",
   "scripts": {
     "start": "node app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/igorpavlov/X.git"
+    "url": "git+https://github.com/igorpavlov/imgfnt.git"
   },
   "keywords": [],
   "author": "Igor Pavlov",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/igorpavlov/X/issues"
+    "url": "https://github.com/igorpavlov/imgfnt/issues"
   },
-  "homepage": "https://github.com/igorpavlov/X#readme",
+  "homepage": "https://github.com/igorpavlov/imgfnt#readme",
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
