@@ -1,0 +1,88 @@
+doctype html
+html(lang='en', xmlns='http://www.w3.org/1999/xhtml')
+	head
+		title Imgfnt
+		meta(name="viewport",id="viewport",content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
+		meta(name='description', content="Generate image filled text with #imgfnt")
+		meta(name='twitter:card', value='Generate image filled text with #imgfnt')
+		meta(property='og:title', content='Imgfnt')
+		meta(property='og:type', content='article')
+		meta(property='og:image', content!=host+'/api/v1/generate?text=imgfnt&url=https%3A%2F%2Fi.imgur.com%2Fp4FjhO9.jpg&width=1200&height=630&background=%23F1F1F1')
+		meta(property='og:description', content="Generate image filled text with #imgfnt")
+		link(href="https://fonts.googleapis.com/css?family=Lato:400,700",rel="stylesheet")
+		link(rel='stylesheet', href='/app.css',type='text/css')
+		script.
+			const HOST = "#{host}";
+		
+	body
+		#fb-root
+		script.
+			(function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) return;
+				js = d.createElement(s); js.id = id;
+				js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+
+		- if(process.env.NODE_ENV==="production")
+			script.
+				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+					(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+					m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+				ga('create', 'UA-99602114-1', 'auto');
+				ga('send', 'pageview');
+
+		.body
+			.sample-wrapper
+				img.sample(src='/default.png')
+			div(style="margin-top:40px")
+				span.notshared(style="margin-right:10px") Share this page with
+				span.shared(style="display: none;margin-right:10px") Share your piece of art with 
+				#shareFB Facebook
+			//-h3 (the image above was gererated on the fly)
+			.examples
+				.test-yourself
+					form#generate
+						input(type="text",placeholder="Your Text",name="text",value="imgfnt")
+						input(type="text",placeholder="Image URL",name="url",value="http://i.imgur.com/p4FjhO9.jpg")
+						.text-right
+							button(type="submit",name="submit") Generate
+				br
+				br
+				h3 What is IMGFNT?
+				p IMGFNT is an image filled text generator 
+					strong
+						u as a service
+					| . This means you don't need to install any software or libraries. Moreover, if you need to generate such images on the fly (for example to use inside og:img Open Graph meta tag), all you need to do is to use a simple configurable link:
+				pre
+					| #{host}
+					|   ?text=&lt;your_text&gt;
+					|   &url=&lt;your_image_URL&gt;
+					|   &width=&lt;width_in_pixels&gt;
+					|   &height=&lt;height_in_pixels&gt;
+					|   &background=&lt;hex_color&gt;
+				p Width, height and background parameters are optional. All parameters' values 
+					strong
+						u must
+					|  be escaped. Here are some examples of use:
+				h5 Direct link:
+				textarea#sample-direct(rows=2,readonly=true) 
+				h5 &lt;IMG/&gt;:
+				textarea#sample-image(rows=2,readonly=true) 
+				h5 Open Graph:
+				textarea#sample-og(rows=2,readonly=true) 
+			center
+				br
+				br
+				.fb-share-button(data-href='http://imgfnt.com', data-layout='button_count', data-size='large', data-mobile-iframe='true')
+					a.fb-xfbml-parse-ignore(target='_blank', href='https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%imgfnt.com%2F&src=sdkpreparse') Share
+				br
+				br
+				
+			footer
+				center
+					a(href="https://igorpavlov.org",target="_blank") igorpavlov.org &copy; 2017
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+		script(src='/app.js')

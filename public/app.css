@@ -1,0 +1,140 @@
+html,body {
+  margin:0;
+  padding:0;
+}
+
+textarea, input, button { outline: none; }
+
+body {
+  background-color: #F1F1F1;
+  font-family: Lato;
+  font-size:18px;
+  color: rgba(0,0,0,.5);
+}
+
+.sample-wrapper {
+  height:200px;
+}
+
+.sample {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  max-height:200px;
+  max-width:100%;
+  margin: 20px auto;
+}
+
+.body {
+  padding:40px 20px;
+  text-align: center;
+}
+
+.examples {
+  width:100%;
+  font-family: Lato;
+  max-width:600px;
+  margin: 0px auto;
+  text-align: left;
+}
+
+.test-yourself {
+  border: solid 1px #ccc;
+  background-color: white;
+  border-radius:4px;
+  padding:20px;
+  font-family: Lato;
+  font-size:100%;
+  width:calc(100% - 40px - 2px);
+  display: block;
+  margin:10px auto;
+}
+
+
+.test-yourself {
+  margin-top:20px;
+}
+
+textarea {
+  border: none;
+  background-color: transparent;
+  font-family: Lato;
+  font-size:80%;
+  width:calc(100%);
+  display: block;
+  margin:10px auto;
+  color: rgba(0,0,0,.5);
+}
+
+input {
+  border: solid 1px #ccc;
+  background-color: white;
+  border-radius:4px;
+  padding:5px 10px;
+  font-family: Lato;
+  font-size:100%;
+  width:calc(100% - 20px - 2px);
+  display: block;
+  margin-bottom:10px;
+}
+
+button {
+  background-color: #F79;
+  display: block;
+  border-radius:4px;
+  padding:10px 0px;
+  width:100%;
+  color: white;
+  border: none;
+  font-size:100%;
+  cursor: pointer;
+}
+
+button[disabled] {
+  opacity: 0.5;
+}
+
+button:hover {
+  background-color: #E68;
+}
+
+#shareFB {
+  background-color: #3b5998;
+  border-radius:4px;
+  padding:10px 20px;
+  color: white;
+  border: none;
+  font-size:100%;
+  cursor: pointer;
+  display: inline-block;
+}
+
+#shareFB:hover {
+  background-color: #2b4988;
+}
+
+h1 {
+  margin-bottom:20px;
+}
+
+h5 {
+  margin-bottom: 0;
+  color: rgba(0,0,0,.5);
+}
+
+::selection,textarea::selection {
+  background: #F69;
+}
+
+.text-right {
+  text-align: right;
+}
+
+footer {
+  margin-top:40px;
+}
+
+footer a {
+  color: rgba(0,0,0,.5);
+  text-decoration: none;
+}
